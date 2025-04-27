@@ -4,6 +4,10 @@ Created By: Utsav Lal
 
 Welcome to the repository for parallelizing Cooley-Tukey Algorithm. In this project my main aim was to build hardware parallelized algorithms for calculating Discrete fourier transform.
 
+## Objective
+
+Discrete Fourier transform (DFT) is one of the most influential and important algorithms invented by mankind. Cooley-Tukey algorithm is the most popular algorithm to bring down the time complexity of DFT from `O(n^2)` to `O(nlogn)`. This algorithm (and many other variants) are often called as Fast Fourier Transform (FFT). Using the Cooley-Tukey Algorithm as base I wanted to explore hardware parallelization using NVIDA CUDA and Open MPI to further improve performance of the algorithm.
+
 ## Folder Structure
 
 `Archive/`: Contains experimental code which may or may not run \

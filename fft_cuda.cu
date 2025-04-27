@@ -21,7 +21,14 @@ void print_device_memory_usage(const std::string &label = "")
               << std::endl;
 }
 
-// Host function for bit reversal
+/**
+ * This function performs bit-reversal on the input index.
+ * It is used to reorder the input data for the FFT algorithm.
+ * The function takes an integer x and the logarithm of the size
+ * of the input data (log_n) and returns the bit-reversed index.
+ * The bit-reversal is done by iterating through the bits of x
+ * and constructing the reversed index.
+ */
 int bit_reverse(int x, int log_n)
 {
     int result = 0;
@@ -33,7 +40,12 @@ int bit_reverse(int x, int log_n)
     return result;
 }
 
-// CUDA kernel for butterfly operations
+/**
+ * This is the kernel function that performs the butterfly operation
+ * for the FFT algorithm. It computes the FFT in parallel on the GPU.
+ * Each thread handles a specific butterfly operation based on its
+ * index.
+ */
 __global__ void butterfly_kernel(cuDoubleComplex *d_data, int n, int stage, int len)
 {
     int idx = blockIdx.x * blockDim.x + threadIdx.x;
@@ -116,7 +128,7 @@ void fft_cuda(std::vector<std::complex<double>> &a)
     print_device_memory_usage("After cudaFree");
 }
 
-// Serial FFT implementation
+// Serial FFT implementation using Cooley-Tukey algorithm
 void fft_serial(std::vector<std::complex<double>> &a)
 {
     int n = a.size();
