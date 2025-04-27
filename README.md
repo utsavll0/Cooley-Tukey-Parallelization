@@ -4,7 +4,7 @@ Created By: Utsav Lal
 
 Welcome to the repository for parallelizing Cooley-Tukey Algorithm. In this project my main aim was to build hardware parallelized algorithms for calculating Discrete fourier transform.
 
-# Folder Structure
+## Folder Structure
 
 `Archive/`: Contains experimental code which may or may not run \
 
