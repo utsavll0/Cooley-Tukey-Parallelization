@@ -1,0 +1,15 @@
+#!/bin/bash
+
+#SBATCH -J CSC548_FFT   # Job name
+#SBATCH -o job.%j.out         # Name of stdout output file (%j expands to jobId)
+#SBATCH -N 8                 # Total number of nodes requested
+#SBATCH -n 32               # Total number of mpi tasks requested
+#SBATCH -p class
+#SBATCH -t 04:00:00           # Maximum Run time (hh:mm:ss) - 1.5 hours
+
+# Launch MPI-based executable
+prun ./fft_bailey 1024
+prun ./fft_bailey 2048
+prun ./fft_bailey 4096
+prun ./fft_bailey 8192
+prun ./fft_bailey 16384

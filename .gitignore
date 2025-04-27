@@ -1,0 +1,15 @@
+.venv/
+.rsync-exclude
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pdb
+*.egg
+*.egg-info
+*.log
+*.sqlite3
+*.db
+*.DS_Store
+.vscode/
+.idea/
